@@ -1,7 +1,9 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.text.Editable
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +16,13 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.botaoUm.text = "Qualquer outro valor"
+        binding.botaoUm.setOnClickListener {
+            binding.textoUm.text = binding.editText.text
+        }
         binding.textoUm.text = "Qualquer texto que eu queira."
+        
+        binding.editText.doOnTextChanged { text, start, before, count ->  }
+        
+        binding.editText
     }
 }
