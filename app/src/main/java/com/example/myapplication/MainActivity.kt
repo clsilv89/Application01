@@ -1,7 +1,6 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.text.Editable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import com.example.myapplication.databinding.ActivityMainBinding
@@ -20,9 +19,9 @@ class MainActivity : AppCompatActivity() {
             binding.textoUm.text = binding.editText.text
         }
         binding.textoUm.text = "Qualquer texto que eu queira."
-        
-        binding.editText.doOnTextChanged { text, start, before, count ->  }
-        
-        binding.editText
+
+        binding.editText.doOnTextChanged { text, start, before, count ->
+            binding.textoUm.text = text
+        }
     }
 }

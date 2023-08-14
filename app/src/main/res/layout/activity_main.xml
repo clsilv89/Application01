@@ -1,14 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_hexa">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/texto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/texto2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="2"
+            app:layout_constraintStart_toEndOf="@id/texto1"
+            app:layout_constraintTop_toBottomOf="@id/texto1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/texto3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="3"
+            app:layout_constraintBottom_toTopOf="@id/texto2"
+            app:layout_constraintStart_toEndOf="@id/texto2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/texto4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            app:layout_constraintBottom_toBottomOf="@id/texto3"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/botao1"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/btn_text"
+            app:layout_constraintEnd_toStartOf="@id/botao2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/texto2" />
+
+        <Button
+            android:id="@+id/botao2"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/btn_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/botao1"
+            app:layout_constraintTop_toBottomOf="@id/texto2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4" />
+
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/texto_um"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The lazy dog jumps over the big brown fox"
+        android:text="@string/lazy_dog_jumps_fox"
         android:textAlignment="center"
         android:textSize="17sp" />
 
@@ -20,7 +134,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_text"
@@ -37,5 +151,18 @@
         android:gravity="center"
         android:text="Salvar nome"
         android:textSize="17sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botaoStyle"
+        android:text="@string/btn_text"
+        style="@style/StyleBotao" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botaoStyle2"
+        android:text="@string/btn_text"
+        style="@style/StyleBotao" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botaoStyle3"
+        android:text="@string/btn_text"
+        style="@style/StyleBotao" />
 
 </LinearLayout>
